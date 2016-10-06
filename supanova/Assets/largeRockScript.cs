@@ -20,8 +20,12 @@ public class largeRockScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        me.transform.Translate(Vector3.left * mySpeed);
-	}
+        if(me.tag == "rock")
+            me.transform.Translate(Vector3.left * mySpeed);
+
+        if(me.tag == "satellite")
+            me.transform.Translate(Vector3.left * mySpeed/5);
+    }
 
 
     void OnTriggerEnter2D( Collider2D collision)

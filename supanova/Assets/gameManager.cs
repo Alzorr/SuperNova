@@ -9,7 +9,8 @@ public class gameManager : MonoBehaviour
     public GameObject sun;
     public GameObject largeRock;
     public GameObject smallRock;
-   // public GameObject[] rocks;
+    // public GameObject[] rocks;
+    public GameObject satellite;
     public GameObject bigBoost;
     public GameObject smallBoost;
     public Transform spawnPoint;
@@ -38,6 +39,7 @@ public class gameManager : MonoBehaviour
             spawnRate = .3f;
             asteroidSpawn();
             boostSpawn();
+            satSpawn();
         }
 
         
@@ -73,6 +75,16 @@ public class gameManager : MonoBehaviour
             Instantiate(largeRock, spawnLine, Quaternion.identity);
 
 
+
+    }
+
+    public void satSpawn()
+    {
+        int yesOrNo = Random.Range(1, 10);
+        Vector2 spawnLine = new Vector2(spawnPoint.position.x, Random.Range(-5, 5));
+
+        if (yesOrNo == 1)
+            Instantiate(satellite, spawnLine, Quaternion.identity);
 
     }
 }
