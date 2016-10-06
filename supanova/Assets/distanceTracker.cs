@@ -7,7 +7,10 @@ public class distanceTracker : MonoBehaviour
     public Text tooFar;
     public Transform myPos;
     public Transform sunPerPos;
-    public float distance; 
+    public float distance;
+
+    public GameObject GameOverPanel;
+    public shipScript playerShip;
 
 	// Use this for initialization
 	void Start ()
@@ -27,6 +30,11 @@ public class distanceTracker : MonoBehaviour
         if (sunPerPos.position.x >= myPos.position.x)
         {
             tooFar.text = null;
+        }
+
+        if (!playerShip.isAlive)
+        {
+            GameOverPanel.SetActive(true);
         }
     }
 }

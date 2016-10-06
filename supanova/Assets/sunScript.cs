@@ -25,14 +25,5 @@ public class sunScript : MonoBehaviour
             me.transform.Translate(Vector2.left * Time.smoothDeltaTime * mySpeed);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            Debug.Log("Quit");
-            //Application.Quit();
-            collision.gameObject.SetActive(false);
-
-        }
-    }
+    
 }

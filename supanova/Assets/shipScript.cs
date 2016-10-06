@@ -15,6 +15,8 @@ public class shipScript : MonoBehaviour
     public bool bigBoostOn = false;
     public bool smallBoostOn = false;
 
+    public bool isAlive = true;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -131,4 +133,15 @@ public class shipScript : MonoBehaviour
     {
 
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "sun")
+        {
+            Debug.Log("Player Died");
+            isAlive = false;
+
+        }
+    }
+
 }
